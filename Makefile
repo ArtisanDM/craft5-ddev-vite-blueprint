@@ -14,7 +14,6 @@ install: up build
 	ddev exec php craft plugin/install redactor
 	ddev exec php craft plugin/install seomatic
 	ddev exec php craft plugin/install vite
-	ddev exec php craft plugin/install blitz
 	@echo "ready to take off 🎉🎉🎉"
 	@echo "type 'make dev' to  run vite development server"
 up:

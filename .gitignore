@@ -109,5 +109,4 @@ dist
 /storage/config-deltas
 /storage/logs
 /storage/runtime
-/config/project
 /.ddev/config.yaml

@@ -9,14 +9,14 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/thomasbendl/craft4-ddev-vite-blueprint.git"
+		"url": "git+https://github.com/ArtisanDM/craft4-ddev-vite-blueprint.git"
 	},
 	"author": "@thomasbendl, @smonist",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/thomasbendl/craft4-ddev-vite-blueprint/issues"
+		"url": "https://github.com/ArtisanDM/craft4-ddev-vite-blueprint"
 	},
-	"homepage": "https://github.com/thomasbendl/craft4-ddev-vite-blueprint#readme",
+	"homepage": "https://github.com/ArtisanDM/craft4-ddev-vite-blueprint",
 	"devDependencies": {
 		"@vitejs/plugin-legacy": "^1.6.3",
 		"autoprefixer": "^10.4.0",

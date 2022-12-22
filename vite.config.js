@@ -20,7 +20,7 @@ export default ({ command }) => ({
 		port: 3000,
 	},
 	plugins: [
-		liveReload(["./templates/**/*", "./vendor/szenario/**/*"]),
+		liveReload(["./templates/**/*"]),
 		legacy({
 			targets: ["defaults"],
 			additionalLegacyPolyfills: ["regenerator-runtime/runtime"],
