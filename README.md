@@ -14,7 +14,7 @@ Combine the power of Craft CMS and Vite.js with zero configuration setup and inc
 1. Copy `craft4-ddev-vite-blueprint` repo contents into a new project
 2. Choose a project slug (must be kebab case) and replace `craft4-ddev-vite-blueprint` with new project slug in:
     1. `name` in `ddev > config.yaml`
-    2. `PRIMARY_SITE_URL` and `CRAFT_DB_SERVER` in `.env`
+    2. `PRIMARY_SITE_URL` and `CRAFT_DB_SERVER` in `.env`. **NOTE: Ensure that the `PRIMARY_SITE_URL` value does not have a trailing slash, as this will interfere with the vite server.**
     3. `name` in `package.json`
 3. ``make install``, follow prompts to set up Craft CMS.
 4. ``make dev``
