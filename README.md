@@ -24,7 +24,7 @@ Combine the power of Craft CMS and Vite.js with zero configuration setup and inc
 
 ### Subsequent Use
 
-#### If pulling repo for the first time
+#### Pulling existing project repo
 1. `ddev start`
 2. `ddev import-db --src=[file_path]` - import new DB, file path from project root.
 3. `make dev`
