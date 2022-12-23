@@ -51,6 +51,12 @@
 		"pre-update-cmd": "@pre-craft-update",
 		"pre-install-cmd": "@pre-craft-update",
 		"post-update-cmd": "@post-craft-update",
-		"post-install-cmd": "@post-craft-update"
+		"post-install-cmd": "@post-craft-update",
+		"post-pull-dev": [
+			"@php craft install/check && php craft clear-caches/all || return 0",
+			"@php craft install/check && php craft migrate/all || return 0",
+			"@php craft install/check && php craft project-config/apply || return 0",
+			"@php craft install/check && php craft migrate/all || return 0"
+		  ]
 	}
 }

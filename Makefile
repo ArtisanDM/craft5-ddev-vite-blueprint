@@ -20,6 +20,7 @@ up:
 	if [ ! "$$(ddev describe | grep OK)" ]; then \
 		ddev start; \
 		ddev composer install; \
+		ddev composer post-pull-dev; \
 		ddev exec yarn install; \
     fi
 %:
