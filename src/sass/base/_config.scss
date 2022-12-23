@@ -1,16 +1,5 @@
 $black: rgba(0,0,0,1);
 $white: rgba(255,255,255,1);
-//------------------------------------\\
-// SUSY GRID
-//------------------------------------\\
-$susy: (
-    columns: 12,
-    gutters: 0.3,
-    math: fluid,
-    gutter-position: after,
-    container-position: center,
-    debug: (image: hide, color: rgba(0,255,0,0.30), output: background, toggle: top right,)
-);
 
 .o-wrapper {
     //@include clearfix;

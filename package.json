@@ -37,7 +37,6 @@
 		"breakpoint-sass": "^2.7.1",
 		"gsap": "^3.8.0",
 		"normalize-scss": "^7.0.1",
-		"susy": "2.2.14",
 		"canvas-confetti": "^1.5.1"
 	},
 	"browserslist": {
