@@ -4,7 +4,7 @@ $white: rgba(255,255,255,1);
 .o-wrapper {
     //@include clearfix;
     position: relative;
-    @include container(90%);
+    //@include container(90%);
 }
 
 //------------------------------------\\
