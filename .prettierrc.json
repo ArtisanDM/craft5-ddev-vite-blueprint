@@ -10,6 +10,9 @@
 		"nav,endnav",
 		"switch,case,default,endswitch",
 		"ifchildren,endifchildren",
-		"cache,endcache"
+		"cache,endcache",
+		"tag,endtag",
+		"js,endjs",
+		"css,endcss"
 	]
 }
