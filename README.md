@@ -37,6 +37,10 @@ Combine the power of Craft CMS and Vite.js with zero configuration setup and inc
 1. `make dev`
 2. open `https://[project-slug].ddev.site`
 
+#### Notes
+
+Notes can be added to the project using a `notes.md` file. This file will be automatically ignored from the repo and is for personal developer use only. Project-critical information should be added to the `README.md`.
+
 ## Commands
 
 1. `make build` - build project files
