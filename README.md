@@ -4,9 +4,9 @@ Combine the power of Craft CMS and Vite.js with zero configuration setup and inc
 
 ## Quickstart
 
-1. ``make install``
-2. ``make dev``
-3. open https://craft4-ddev-vite-blueprint.ddev.site
+1. `make install`
+2. `make dev`
+3. open `https://[project-slug].ddev.site`
 
 ## Advanced Setup
 
@@ -17,9 +17,9 @@ Combine the power of Craft CMS and Vite.js with zero configuration setup and inc
     1. `name` in `ddev > config.yaml`
     2. `PRIMARY_SITE_URL` and `CRAFT_DB_SERVER` in `.env`. **NOTE: Ensure that the `PRIMARY_SITE_URL` value does not have a trailing slash, as this will interfere with the vite server.**
     3. `name` in `package.json`
-3. ``make install``, follow prompts to set up Craft CMS.
-    - *No starter DB is needed when starting the project from scratch.*
-4. ``make dev``
+3. `make install`, follow prompts to set up Craft CMS.
+    - _No starter DB is needed when starting the project from scratch._
+4. `make dev`
 5. open `https://[project-slug].ddev.site`
 6. Update `README.md` to remove blueprint instructions and customize any setup details for new project.
 
@@ -53,9 +53,8 @@ Notes can be added to the project using a `notes.md` file. This file will be aut
 
 ## Requirements
 
--  Docker, https://www.docker.com
--  DDEV, https://ddev.com
-
+-   Docker, https://www.docker.com
+-   DDEV, https://ddev.com
 
 ## Credits
 
@@ -67,5 +66,5 @@ Updated by [Josh Parylak](https://github.com/joshparylak) - [Artisan Digital Med
 
 The team behind the magic ✨ 🪄 🦄
 
-- <https://github.com/thomasbendl>
-- <https://github.com/smonist>
+-   <https://github.com/thomasbendl>
+-   <https://github.com/smonist>
