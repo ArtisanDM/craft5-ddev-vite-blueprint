@@ -103,6 +103,8 @@ dist
 # jet brains IDE files
 .idea
 /.idea
+
+#Craft and local dev
 /vendor
 .DS_Store
 /web/cpresources
@@ -110,6 +112,7 @@ dist
 /storage/logs
 /storage/runtime
 /.ddev/config.yaml
+.env
 
 #Misc
 notes.md
