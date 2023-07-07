@@ -6,14 +6,11 @@
 			{{ siteName }}
 		</title>
 		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
-		<link href="{{ craft.vite.asset('src/sass/main.scss') }}"
-			rel="stylesheet" />
-		{{ craft.vite.includeCriticalCssTags() }}
+		{{ craft.vite.script('src/js/app.ts', false, { defer: true }) }}
 	</head>
 	<body class="ltr">
 		{% block content %}
 
 		{% endblock %}
-		{{ craft.vite.script('src/js/app.ts') }}
 	</body>
 </html>
