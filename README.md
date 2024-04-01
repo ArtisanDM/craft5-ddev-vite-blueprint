@@ -1,5 +1,7 @@
 # Craft CMS Dev Environment
 
+> :warning: **Not ready for wide deployment. Use Craft 4 Blueprint.**
+
 Combine the power of Craft CMS and Vite.js with zero configuration setup and incredible fast paced development 😎.
 
 ## Quickstart
@@ -12,9 +14,9 @@ Combine the power of Craft CMS and Vite.js with zero configuration setup and inc
 
 ### Starting Up a New Project
 
-1. Copy `craft4-ddev-vite-blueprint` repo contents into a new project
+1. Copy `craft5-ddev-vite-blueprint` repo contents into a new project
 2. Create `.env` file at project root by copying `.env.example`.
-3. Choose a project slug (must be kebab case) and replace `craft4-ddev-vite-blueprint` with new project slug in:
+3. Choose a project slug (must be kebab case) and replace `craft5-ddev-vite-blueprint` with new project slug in:
     1. `name` in `ddev > config.yaml`
     2. `PRIMARY_SITE_URL` and `CRAFT_DB_SERVER` in `.env`. **NOTE: Ensure that the `PRIMARY_SITE_URL` value does not have a trailing slash, as this will interfere with the vite server.**
     3. `name` in `package.json`
@@ -49,17 +51,17 @@ Notes can be added to the project using a `notes.md` file. This file will be aut
 3. `make install` - run first time setup
 4. `ddev start` - starts ddev project without vite server
 5. `ddev craft` - run Craft CLI commands
-6. `ddev import-db --src=[file_path]` - import new DB, file path from project root.  _(A gitignored `db` folder is included in the repository for storing local db copies)._
+6. `ddev import-db --src=[file_path]` - import new DB, file path from project root. _(A gitignored `db` folder is included in the repository for storing local db copies)._
 7. `npx vite build` - build for production
 
 ## Requirements
 
-- [Docker](https://www.docker.com)
-- [DDEV](https://ddev.com)
+-   [Docker](https://www.docker.com)
+-   [DDEV](https://ddev.com)
 
 ## Credits
 
-Repo based on fork of [Craft CMS Dev Environment](https://github.com/thomasbendl/craft4-ddev-vite-blueprint)
+Repo based on fork of [Craft CMS Dev Environment](https://github.com/thomasbendl/craft5-ddev-vite-blueprint)
 
 Updated by [Josh Parylak](https://github.com/joshparylak) - [Artisan Digital Media](https://github.com/ArtisanDM)
 
@@ -67,5 +69,5 @@ Updated by [Josh Parylak](https://github.com/joshparylak) - [Artisan Digital Med
 
 The team behind the magic ✨ 🪄 🦄
 
-- <https://github.com/thomasbendl>
-- <https://github.com/smonist>
+-   <https://github.com/thomasbendl>
+-   <https://github.com/smonist>

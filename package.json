@@ -1,5 +1,5 @@
 {
-	"name": "craft4-ddev-vite-blueprint",
+	"name": "craft5-ddev-vite-blueprint",
 	"version": "1.0.0",
 	"description": "Craft CMS 4 + DDEV + Vite Blueprint",
 	"main": "vite.config.js",
@@ -9,14 +9,14 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/ArtisanDM/craft4-ddev-vite-blueprint.git"
+		"url": "git+https://github.com/ArtisanDM/craft5-ddev-vite-blueprint.git"
 	},
 	"author": "@thomasbendl, @smonist",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/ArtisanDM/craft4-ddev-vite-blueprint"
+		"url": "https://github.com/ArtisanDM/craft5-ddev-vite-blueprint"
 	},
-	"homepage": "https://github.com/ArtisanDM/craft4-ddev-vite-blueprint",
+	"homepage": "https://github.com/ArtisanDM/craft5-ddev-vite-blueprint",
 	"devDependencies": {
 		"@vitejs/plugin-legacy": "^4.0.5",
 		"autoprefixer": "^10.4.0",
