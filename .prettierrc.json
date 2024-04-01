@@ -13,6 +13,7 @@
 		"cache,endcache",
 		"tag,endtag",
 		"js,endjs",
-		"css,endcss"
+		"css,endcss",
+		"minify,endminify"
 	]
 }

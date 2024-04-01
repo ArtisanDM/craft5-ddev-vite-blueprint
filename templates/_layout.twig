@@ -1,16 +1,18 @@
-<!DOCTYPE html>
-<html lang="{{ craft.app.language }}">
-	<head>
-		<meta charset="utf-8" />
-		<title>
-			{{ siteName }}
-		</title>
-		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
-		{{ craft.vite.script('src/js/app.ts', false, { defer: true }) }}
-	</head>
-	<body class="ltr">
-		{% block content %}
+{% minify %}
+	<!DOCTYPE html>
+	<html lang="{{ craft.app.language }}">
+		<head>
+			<meta charset="utf-8" />
+			<title>
+				{{ siteName }}
+			</title>
+			<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+			{{ craft.vite.script('src/js/app.ts', false, { defer: true }) }}
+		</head>
+		<body class="ltr">
+			{% block content %}
 
-		{% endblock %}
-	</body>
-</html>
+			{% endblock %}
+		</body>
+	</html>
+{% endminifiy %}

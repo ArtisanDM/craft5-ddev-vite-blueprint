@@ -11,8 +11,9 @@ install: up build
 		$(filter-out $@,$(MAKECMDGOALS))
 	ddev exec php craft install \
 		$(filter-out $@,$(MAKECMDGOALS))
-	ddev exec php craft plugin/install redactor
+	ddev exec php craft plugin/install ckeditor
 	ddev exec php craft plugin/install seomatic
+	ddev exec php craft plugin/install minify
 	ddev exec php craft plugin/install vite
 	@echo "ready to take off 🎉🎉🎉"
 	@echo "type 'make dev' to  run vite development server"
