@@ -1,7 +1,7 @@
 {
 	"name": "craft5-ddev-vite-blueprint",
 	"version": "1.0.0",
-	"description": "Craft CMS 4 + DDEV + Vite Blueprint",
+	"description": "Craft CMS 5 + DDEV + Vite Blueprint",
 	"main": "vite.config.js",
 	"scripts": {
 		"dev": "node emptyDistDir.js && node viteDevServerToggle.js 1 && vite --host",
@@ -18,7 +18,7 @@
 	},
 	"homepage": "https://github.com/ArtisanDM/craft5-ddev-vite-blueprint",
 	"devDependencies": {
-		"@vitejs/plugin-legacy": "^4.0.5",
+		"@vitejs/plugin-legacy": "^5.0.0",
 		"autoprefixer": "^10.4.0",
 		"fs-extra": "^10.0.0",
 		"melody-idom": "^1.7.5",
@@ -31,12 +31,12 @@
 		"regenerator-runtime": "^0.13.9",
 		"rollup-plugin-critical": "^1.0.12",
 		"sass": "^1.43.4",
-		"vite": "^4.3.9",
+		"vite": "^5.0.0",
 		"vite-plugin-compression": "^0.3.6",
 		"vite-plugin-live-reload": "^2.1.0"
 	},
 	"dependencies": {
-		"breakpoint-sass": "^2.7.1",
+		"breakpoint-sass": "^3.0.0",
 		"normalize-scss": "^7.0.1",
 		"terser": "^5.18.2"
 	},
