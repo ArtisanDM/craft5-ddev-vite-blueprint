@@ -1,11 +1,11 @@
 {
 	"require": {
-		"craftcms/ckeditor": "^4.0.3",
-		"craftcms/cms": "^5.0.0",
+		"craftcms/ckeditor": "4.0.6",
+		"craftcms/cms": "5.7.1.1",
 		"doublesecretagency/craft-cpcss": "^3.0.0",
-		"nystudio107/craft-minify": "^5.0.0-beta.2",
-		"nystudio107/craft-seomatic": "^5.0.0-beta.8",
-		"nystudio107/craft-vite": "^5.0.0-beta.3",
+		"nystudio107/craft-minify": "5.0.0",
+		"nystudio107/craft-seomatic": "5.1.12",
+		"nystudio107/craft-vite": "5.0.1",
 		"vlucas/phpdotenv": "^5.4.0"
 	},
 	"require-dev": {

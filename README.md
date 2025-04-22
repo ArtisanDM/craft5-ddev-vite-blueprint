@@ -61,7 +61,7 @@ Notes can be added to the project using a `notes.md` file. This file will be aut
 
 ## Credits
 
-Repo based on fork of [Craft CMS Dev Environment](https://github.com/thomasbendl/craft5-ddev-vite-blueprint)
+Repo based on fork of [Craft CMS Dev Environment](https://github.com/thomasbendl/craft4-ddev-vite-blueprint)
 
 Updated by [Josh Parylak](https://github.com/joshparylak) - [Artisan Digital Media](https://github.com/ArtisanDM)
 

@@ -1,22 +1,46 @@
 name: craft5-ddev-vite-blueprint
 type: craftcms
 docroot: web
-php_version: "8.2"
+php_version: '8.2'
 webserver_type: apache-fpm
-router_http_port: "80"
-router_https_port: "443"
+router_http_port: '80'
+router_https_port: '443'
 xdebug_enabled: false
 additional_hostnames: []
 additional_fqdns: []
 database:
     type: mysql
-    version: "8.0"
-webimage_extra_packages: [gconf-service, libasound2, libatk1.0-0, libcairo2, libgconf-2-4, libgdk-pixbuf2.0-0, libgtk-3-0, libnspr4, libpango-1.0-0, libpangocairo-1.0-0, libx11-xcb1, libxcomposite1, libxcursor1, libxdamage1, libxfixes3, libxi6, libxrandr2, libxrender1, libxss1, libxtst6, fonts-liberation, libnss3, xdg-utils]
+    version: '8.0'
+webimage_extra_packages:
+    [
+        gconf-service,
+        libasound2,
+        libatk1.0-0,
+        libcairo2,
+        libgconf-2-4,
+        libgdk-pixbuf2.0-0,
+        libgtk-3-0,
+        libnspr4,
+        libpango-1.0-0,
+        libpangocairo-1.0-0,
+        libx11-xcb1,
+        libxcomposite1,
+        libxcursor1,
+        libxdamage1,
+        libxfixes3,
+        libxi6,
+        libxrandr2,
+        libxrender1,
+        libxss1,
+        libxtst6,
+        fonts-liberation,
+        libnss3,
+        xdg-utils,
+    ]
 use_dns_when_possible: true
-composer_version: "2"
+composer_version: '2'
 web_environment: []
-nodejs_version: "16"
-
+nodejs_version: '23'
 # Key features of DDEV's config.yaml:
 
 # name: <projectname> # Name of the project, automatically provides

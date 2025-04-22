@@ -3,6 +3,8 @@ import legacy from '@vitejs/plugin-legacy';
 import critical from 'rollup-plugin-critical';
 import viteCompression from 'vite-plugin-compression';
 
+let port = 3000;
+
 export default ({ command }) => ({
 	base: command === 'serve' ? '' : '/dist/',
 	css: { preprocessorOptions: { scss: { charset: false } } },
@@ -18,7 +20,13 @@ export default ({ command }) => ({
 	},
 	server: {
 		host: '0.0.0.0',
-		port: 3000,
+		port: port,
+		origin: `${process.env.DDEV_PRIMARY_URL.replace(/:\d+$/, '')}:3000`,
+		// Configure CORS securely for the Vite dev server to allow requests from *.ddev.site domains,
+		// supports additional hostnames (via regex). If you use another `project_tld`, adjust this.
+		cors: {
+			origin: /https?:\/\/([A-Za-z0-9\-\.]+)?(\.ddev\.site)(?::\d+)?$/,
+		},
 	},
 	plugins: [
 		liveReload(['./templates/**/*']),
