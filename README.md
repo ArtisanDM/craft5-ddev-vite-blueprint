@@ -1,7 +1,5 @@
 # Craft CMS Dev Environment
 
-> :warning: **Not ready for wide deployment. Use Craft 4 Blueprint.**
-
 Combine the power of Craft CMS and Vite.js with zero configuration setup and incredible fast paced development 😎.
 
 ## Quickstart
