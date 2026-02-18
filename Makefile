@@ -1,20 +1,4 @@
-.PHONY: build dev up install fresh
-
-# -------------------------------------------------------------------
-# Stamp-based dependency caching
-# -------------------------------------------------------------------
-
-vendor/.stamp: composer.json composer.lock
-	ddev composer install
-	touch vendor/.stamp
-
-node_modules/.stamp: package.json yarn.lock
-	ddev exec yarn install
-	touch node_modules/.stamp
-
-# -------------------------------------------------------------------
-# Main targets
-# -------------------------------------------------------------------
+.PHONY: build dev up install
 
 build: up
 	ddev exec yarn build
@@ -29,21 +13,15 @@ install: up build
 	@echo "ready to take off 🎉🎉🎉"
 	@echo "type 'make dev' to run vite development server"
 
-# -------------------------------------------------------------------
-# Environment bootstrap
-# -------------------------------------------------------------------
-
-up: vendor/.stamp node_modules/.stamp
+up:
 	@if ! ddev describe >/dev/null 2>&1; then \
 		echo "Starting DDEV..."; \
 		ddev start; \
-		ddev launch; \
 	fi
+	ddev composer install
 	ddev composer post-pull-dev
-
-# -------------------------------------------------------------------
-# Full reset
-# -------------------------------------------------------------------
+	ddev exec yarn install
+	ddev launch
 
 fresh:
 	@echo "🔥 Resetting environment..."
@@ -53,10 +31,6 @@ fresh:
 	ddev start
 	make up
 	@echo "✨ Fresh environment ready"
-
-# -------------------------------------------------------------------
-# Pass-through for Craft arguments
-# -------------------------------------------------------------------
 
 %:
 	@:
