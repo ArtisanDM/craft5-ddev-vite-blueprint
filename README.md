@@ -45,13 +45,24 @@ Notes can be added to the project using a `notes.md` file. This file will be aut
 
 ## Commands
 
+### Make Commands
+
 1. `make build` - build project files
 2. `make dev` - run vite project server
 3. `make install` - run first time setup
-4. `ddev start` - starts ddev project without vite server
-5. `ddev craft` - run Craft CLI commands
-6. `ddev import-db --src=[file_path]` - import new DB, file path from project root. _(A gitignored `db` folder is included in the repository for storing local db copies)._
-7. `npx vite build` - build for production
+4. `make env` - creates an env from env.example. Auto-runs during setup.
+5. `make env-check` - checks existing env file against env.example file to check for missing values that may have been added to the default example. This will run any time `make dev` is run to alert the user of missing values, but it can also be run independently.
+6. `make env-example` - If new values have been added to the local env, running this will copy them to the example for documentation, stripping sensitive keys and passwords.
+7. `make servd` - adds Servd elements to project.
+8. `make vue` - adds basic Vue elements to project. _Caution: This will overwrite the current vite.config.js with the contents of vite.config.vue.js. As such, running this command at any time other than project creation could be destructive to updates made to the Vite config. If updates to vite.config.js are present, changes from it should be manually added to vite.config.vue.js prior to running this command._
+9. `make fresh` - _Danger Zone:_ This command will wipe `vendor` and `node_modules`, delete the currently loaded database, and restart the ddev project from scratch. No code changes will be made, but the existing db will be lost _permanently_. A backup should be taken before running.
+
+### DDEV Commands
+
+1. `ddev start` - starts ddev project without vite server
+2. `ddev craft` - run Craft CLI commands
+3. `ddev import-db --src=[file_path]` - import new DB, file path from project root. _(A gitignored `db` folder is included in the repository for storing local db copies)._
+4. `ddev exec npx vite build` - build for production
 
 ## Requirements
 

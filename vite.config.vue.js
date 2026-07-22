@@ -24,7 +24,7 @@ export default defineConfig(async ({ command }) => {
 		},
 		server: {
 			host: '0.0.0.0',
-			port: port,
+			port: 3000,
 			origin: process.env.DDEV_PRIMARY_URL
 				? `${process.env.DDEV_PRIMARY_URL.replace(/:\d+$/, '')}:3000`
 				: undefined,
