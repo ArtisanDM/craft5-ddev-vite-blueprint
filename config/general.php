@@ -37,4 +37,5 @@ return GeneralConfig::create()
         '@web' => rtrim(App::env('PRIMARY_SITE_URL'), '/'),
         '@webroot' => dirname(__DIR__) . '/web',
     ])
-    ->sendPoweredByHeader(false);
+    ->sendPoweredByHeader(false)
+    ->cpTrigger('admin');

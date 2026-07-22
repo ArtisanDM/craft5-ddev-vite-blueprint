@@ -1,9 +1,5 @@
-@use 'base/config';
-@use 'animations/aos-custom';
+@use 'base';
 @use 'helpers/mixins';
-@use 'base/fonts';
-@use 'base/typography';
-@use 'base/page';
-
-@use 'modules/modules';
-@use 'components/components';
+@use 'modules';
+@use 'components';
+@use 'pages';
