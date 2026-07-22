@@ -14,7 +14,7 @@ export default ({ command }) => ({
 		rollupOptions: {
 			input: {
 				app: './src/js/app.ts',
-				css: './src/sass/main.scss',
+				css: './src/scss/main.scss',
 			},
 		},
 	},
