@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"description": "Craft CMS 5 + DDEV + Vite Blueprint",
 	"main": "vite.config.js",
+	"type": "module",
 	"scripts": {
 		"dev": "node emptyDistDir.js && node viteDevServerToggle.js 1 && vite --host",
 		"build": "node viteDevServerToggle.js 0 && vite build"

@@ -1,3 +1,5 @@
+SHELL := /bin/bash
+
 .PHONY: build dev up install
 
 build: up
@@ -19,8 +21,19 @@ env:
 		echo "No .env found, creating from .env.example..."; \
 		cp .env.example .env; \
 	fi
-
-up: env
+env-example:
+	@sed -E \
+		-e '/^(CRAFT_DB_PASSWORD)=/!s/^([A-Za-z0-9_]*(KEY|SECRET|PASSWORD|TOKEN|PWD)[A-Za-z0-9_]*)=.*/\1=/I' \
+		.env > .env.example
+env-check:
+	@missing=$$(comm -23 <(grep -oE '^[A-Za-z0-9_]+' .env.example | sort -u) <(grep -oE '^[A-Za-z0-9_]+' .env | sort -u)); \
+	if [ -n "$$missing" ]; then \
+		echo "Missing from .env:"; \
+		echo "$$missing" | sed 's/^/  /'; \
+	else \
+		echo ".env has all keys from .env.example"; \
+	fi
+up: env env-check
 	@if ! ddev describe >/dev/null 2>&1; then \
 		echo "Starting DDEV..."; \
 		ddev start; \
@@ -30,8 +43,10 @@ up: env
 	ddev exec yarn install
 
 servd: up
-	ddev composer require "servd/craft-asset-storage:^4.2.6" -w && ddev php craft plugin/install servd-asset-storage
-	@grep -qxF 'SERVD_' .env || printf '\n# Servd Config\nSERVD_PROJECT_SLUG=\nSERVD_SECURITY_KEY=\nSERVD_SMTP_PASSWORD=\nSERVD_SMTP_PORT=\nSERVD_SMTP_USERNAME=\n' >> .env
+	ddev composer require "servd/craft-asset-storage:^4.2.6" -w
+	ddev php craft plugin/install servd-asset-storage || true
+	@grep -q '^SERVD_' .env || printf '\n# Servd Config\nSERVD_PROJECT_SLUG=\nSERVD_SECURITY_KEY=\nSERVD_SMTP_PASSWORD=\nSERVD_SMTP_PORT=\nSERVD_SMTP_USERNAME=\n' >> .env
+	@grep -q '^SERVD_' .env.example || printf '\n# Servd Config\nSERVD_PROJECT_SLUG=\nSERVD_SECURITY_KEY=\nSERVD_SMTP_PASSWORD=\nSERVD_SMTP_PORT=\nSERVD_SMTP_USERNAME=\n' >> .env.example
 fresh:
 	@echo "🔥 Resetting environment..."
 	-ddev stop
