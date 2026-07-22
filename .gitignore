@@ -114,6 +114,7 @@ dist
 /storage/config-deltas
 /storage/logs
 /storage/runtime
+/storage/backups
 /.ddev/config.yaml
 .env
 
