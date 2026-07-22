@@ -2,13 +2,12 @@
   "compilerOptions": {
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "node_modules",
     "declaration": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "importHelpers": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "noEmit": true,
     "noImplicitAny": true,
     "outDir": "./dist",
@@ -25,12 +24,10 @@
     "strictFunctionTypes": true,
     "strictNullChecks": true,
     "target": "esnext",
-    "typeRoots": [
-      "node_modules/@types"
-    ]
   },
   "include": [
     "./src/**/*.ts",
-    "./src/**/*.vue"
-  ],
+    "./src/**/*.vue",
+    "./global.d.ts"
+  ]
 }

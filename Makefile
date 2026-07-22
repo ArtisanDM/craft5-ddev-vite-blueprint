@@ -55,6 +55,12 @@ fresh:
 	ddev start
 	make up
 	@echo "✨ Fresh environment ready"
-
+vue: 
+	ddev exec yarn add vite-svg-loader
+	ddev exec yarn add vue
+	ddev exec yarn add vue-loader
+	ddev exec yarn add vue-router
+	ddev exec mkdir -p src/vue
+	cp vite.config.vue.js vite.config.js
 %:
 	@:
