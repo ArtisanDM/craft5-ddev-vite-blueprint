@@ -1,7 +1,7 @@
-module.exports = {
-  map: false,
-  plugins: {
-    'postcss-aspect-ratio-property':{},
-    'autoprefixer': {}
-  }
-}
+export default {
+	map: false,
+	plugins: {
+		'postcss-aspect-ratio-property': {},
+		autoprefixer: {},
+	},
+};

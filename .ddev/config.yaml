@@ -1,7 +1,7 @@
 name: craft5-ddev-vite-blueprint
 type: craftcms
 docroot: web
-php_version: '8.2'
+php_version: '8.3'
 webserver_type: apache-fpm
 router_http_port: '80'
 router_https_port: '443'
@@ -11,30 +11,10 @@ additional_fqdns: []
 database:
     type: mysql
     version: '8.0'
-webimage_extra_packages:
-    - libx11-xcb1
-    - libxcomposite1
-    - libxcursor1
-    - libxdamage1
-    - libxfixes3
-    - libxi6
-    - libxrandr2
-    - libxrender1
-    - libxss1
-    - libxtst6
-    - libnss3
-    - libatk1.0-0
-    - libatk-bridge2.0-0
-    - libcairo2
-    - libpango-1.0-0
-    - libpangocairo-1.0-0
-    - libasound2
-    - libgtk-3-0
-    - fonts-liberation
 use_dns_when_possible: true
 composer_version: '2'
 web_environment: []
-nodejs_version: '23'
+nodejs_version: '24'
 web_extra_exposed_ports:
     - name: craft-vite
       container_port: 3000
