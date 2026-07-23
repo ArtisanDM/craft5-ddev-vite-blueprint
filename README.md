@@ -12,17 +12,14 @@ Combine the power of Craft CMS and Vite.js with zero configuration setup and inc
 
 ### Starting Up a New Project
 
-1. Copy `craft5-ddev-vite-blueprint` repo contents into a new project
-2. Choose a project slug (must be kebab case) and replace `craft5-ddev-vite-blueprint` with new project slug in:
-    1. `name` in `ddev > config.yaml`
-    2. `PRIMARY_SITE_URL` and `CRAFT_DB_SERVER` in `.env.example`. **NOTE: Ensure that the `PRIMARY_SITE_URL` value does not have a trailing slash, as this will interfere with the vite server.**
-    3. `name` in `package.json`
+1. Create new repo from this template.
+2. Choose a project slug (must be kebab case). Run `make name VAL=project-slug` replacing "project-slug" with your chosen value to rename the project.
 3. `make install`, follow prompts to set up Craft CMS.
     - _No starter DB is needed when starting the project from scratch._
-    - _If none exists, a `.env` will be created at this point from the `.env.example`, so it's important to have updated that file before running this step._
+    - _If none exists, a `.env` will be created at this point from the `.env.example`._
 4. If the site will be hosted on [Servd](https://servd.host/), you can run `make servd` at this point to add the [Servd Assets and Helpers](https://plugins.craftcms.com/servd-asset-storage) plugin and add the needed empty values to the `.env.example` and `.env` files.
 5. `make dev`
-6. open `https://[project-slug].ddev.site`
+6. open `https://craft5-ddev-vite-blueprint.ddev.site`
 7. Update `README.md` to remove blueprint instructions and customize any setup details for new project.
 
 ### Subsequent Use
@@ -32,12 +29,12 @@ Combine the power of Craft CMS and Vite.js with zero configuration setup and inc
 1. `ddev start`
 2. `ddev import-db --src=[file_path]` - import new DB, file path from project root. _(A gitignored `db` folder is included in the repository for storing local db copies)._
 3. `make dev`
-4. open `https://[project-slug].ddev.site`
+4. open `https://craft5-ddev-vite-blueprint.ddev.site`
 
 #### Restarting project for local dev
 
 1. `make dev`
-2. open `https://[project-slug].ddev.site`
+2. open `https://craft5-ddev-vite-blueprint.ddev.site`
 
 #### Notes
 

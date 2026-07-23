@@ -1,27 +1,34 @@
 SHELL := /bin/bash
 
 .PHONY: build dev up install vue
-
+#----------------------------------------
 #-- Setup --
+#----------------------------------------
 name:
 	@if [ -z "$(VAL)" ]; then \
 		echo "Usage: make name VAL=your-project-slug"; \
 		exit 1; \
 	fi
-	@files=$$(grep -rlZ 'craft5-ddev-vite-blueprint' \
+	@files=$$(grep -rl 'craft5-ddev-vite-blueprint' \
 		--exclude-dir=node_modules \
 		--exclude-dir=.git \
 		--exclude-dir=vendor \
+		--exclude-dir=storage \
 		--exclude=Makefile \
 		. 2>/dev/null); \
 	if [ -z "$$files" ]; then \
 		echo "No instances of 'craft5-ddev-vite-blueprint' found — nothing to replace."; \
 		echo "This project has already been renamed."; \
 	else \
-		echo "$$files" | xargs -0 sed -i 's/craft5-ddev-vite-blueprint/$(VAL)/g'; \
+		echo "$$files" | while IFS= read -r f; do \
+			sed -i 's/craft5-ddev-vite-blueprint/$(VAL)/g' "$$f"; \
+		done; \
 		echo "Replaced 'craft5-ddev-vite-blueprint' with '$(VAL)'. Project has been successfully named."; \
 	fi
+
+#----------------------------------------
 #-- Build commands --
+#----------------------------------------
 build: up
 	ddev exec yarn build
 dev: up
@@ -49,7 +56,10 @@ up: env env-check
 	ddev composer install
 	ddev composer post-pull-dev
 	ddev exec yarn install
+	
+#----------------------------------------
 #-- Enviornment File Maintenance --
+#----------------------------------------
 env:
 	@if [ ! -f .env ]; then \
 		echo "No .env found, creating from .env.example..."; \
@@ -69,7 +79,10 @@ env-example:
 	@sed -E \
 		-e '/^(CRAFT_DB_PASSWORD)=/!s/^([A-Za-z0-9_]*(KEY|SECRET|PASSWORD|TOKEN|PWD)[A-Za-z0-9_]*)=.*/\1=/I' \
 		.env > .env.example
+		
+#----------------------------------------
 #-- Project Add-ons --
+#----------------------------------------
 servd: up
 	ddev composer require "servd/craft-asset-storage:^4.2.6" -w
 	ddev php craft plugin/install servd-asset-storage || true
