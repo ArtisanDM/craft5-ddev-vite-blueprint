@@ -1,15 +1,19 @@
-$black: rgba(0,0,0,1);
-$white: rgba(255,255,255,1);
+$black: rgba(0, 0, 0, 1);
+$white: rgba(255, 255, 255, 1);
 
 .o-wrapper {
-    //@include clearfix;
-    position: relative;
-    //@include container(90%);
+	//@include clearfix;
+	position: relative;
+	//@include container(90%);
 }
 
 //------------------------------------\\
 // COLORS
 //------------------------------------\\
+:root {
+	--primary-color: #94713a;
+	--bg: #1f1f1f;
+}
 //------------------------------------\\
 // TYPOGRAPHY
 //------------------------------------\\
