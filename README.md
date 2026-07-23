@@ -19,7 +19,7 @@ Combine the power of Craft CMS and Vite.js with zero configuration setup and inc
     - _If none exists, a `.env` will be created at this point from the `.env.example`._
 4. If the site will be hosted on [Servd](https://servd.host/), you can run `make servd` at this point to add the [Servd Assets and Helpers](https://plugins.craftcms.com/servd-asset-storage) plugin and add the needed empty values to the `.env.example` and `.env` files.
 5. `make dev`
-6. open `https://test-project-name.ddev.site`
+6. open `https://craft5-ddev-vite-blueprint.ddev.site`
 7. Update `README.md` to remove "Starting Up a New Project Section" and customize any setup details for new project, such as relevant plugin instructions, additional framework details, and a project description.
 
 ### Subsequent Use
@@ -29,12 +29,12 @@ Combine the power of Craft CMS and Vite.js with zero configuration setup and inc
 1. `ddev start`
 2. `ddev import-db --src=[file_path]` - import new DB, file path from project root. _(A gitignored `db` folder is included in the repository for storing local db copies)._
 3. `make dev`
-4. open `https://test-project-name.ddev.site`
+4. open `https://craft5-ddev-vite-blueprint.ddev.site`
 
 #### Restarting project for local dev
 
 1. `make dev`
-2. open `https://test-project-name.ddev.site`
+2. open `https://craft5-ddev-vite-blueprint.ddev.site`
 
 #### Notes
 
