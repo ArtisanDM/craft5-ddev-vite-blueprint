@@ -1,7 +1,7 @@
 {
 	"name": "craft5-ddev-vite-blueprint",
 	"version": "1.0.0",
-	"description": "Craft CMS 5 + DDEV + Vite Blueprint",
+	"description": "Craft CMS Dev Environment",
 	"main": "vite.config.js",
 	"type": "module",
 	"scripts": {

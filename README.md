@@ -13,7 +13,7 @@ Combine the power of Craft CMS and Vite.js with zero configuration setup and inc
 ### Starting Up a New Project
 
 1. Create new repo from this template.
-2. Choose a project slug (must be kebab case). Run `make name VAL=project-slug` replacing "project-slug" with your chosen value to rename the project.
+2. Choose a project slug (must be kebab case). Run `make name SLUG=project-slug` replacing "project-slug" with your chosen value to rename the project.
 3. `make install`, follow prompts to set up Craft CMS.
     - _No starter DB is needed when starting the project from scratch._
     - _If none exists, a `.env` will be created at this point from the `.env.example`._

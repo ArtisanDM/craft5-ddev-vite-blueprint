@@ -5,26 +5,45 @@ SHELL := /bin/bash
 #-- Setup --
 #----------------------------------------
 name:
-	@if [ -z "$(VAL)" ]; then \
-		echo "Usage: make name VAL=your-project-slug"; \
-		exit 1; \
-	fi
-	@files=$$(grep -rl 'craft5-ddev-vite-blueprint' \
-		--exclude-dir=node_modules \
-		--exclude-dir=.git \
-		--exclude-dir=vendor \
-		--exclude-dir=storage \
-		--exclude=Makefile \
-		. 2>/dev/null); \
-	if [ -z "$$files" ]; then \
-		echo "No instances of 'craft5-ddev-vite-blueprint' found — nothing to replace."; \
-		echo "This project has already been renamed."; \
-	else \
-		echo "$$files" | while IFS= read -r f; do \
-			sed -i 's/craft5-ddev-vite-blueprint/$(VAL)/g' "$$f"; \
-		done; \
-		echo "Replaced 'craft5-ddev-vite-blueprint' with '$(VAL)'. Project has been successfully named."; \
-	fi
+    @if [ -z "$(SLUG)" ]; then \
+        echo "Usage: make name SLUG=your-project-slug LABEL=\"Your Label\""; \
+        exit 1; \
+    fi
+
+    @files=$$(grep -rl 'craft5-ddev-vite-blueprint' \
+        --exclude-dir=node_modules \
+        --exclude-dir=.git \
+        --exclude-dir=vendor \
+        --exclude-dir=storage \
+        --exclude=Makefile \
+        . 2>/dev/null); \
+    if [ -z "$$files" ]; then \
+        echo "No instances of 'craft5-ddev-vite-blueprint' found — nothing to replace."; \
+    else \
+        echo "$$files" | while IFS= read -r f; do \
+            sed -i 's/craft5-ddev-vite-blueprint/$(SLUG)/g' "$$f"; \
+        done; \
+        echo "Replaced 'craft5-ddev-vite-blueprint' with '$(SLUG)'."; \
+    fi
+
+    @if [ -n "$(LABEL)" ]; then \
+        label_files=$$(grep -rl 'Craft CMS Dev Environment' \
+            --exclude-dir=node_modules \
+            --exclude-dir=.git \
+            --exclude-dir=vendor \
+            --exclude-dir=storage \
+            --exclude=Makefile \
+            . 2>/dev/null); \
+        if [ -z "$$label_files" ]; then \
+            echo "No instances of 'Craft CMS Dev Environment' found — nothing to replace."; \
+        else \
+            echo "$$label_files" | while IFS= read -r f; do \
+                sed -i 's/Craft CMS Dev Environment/$(LABEL)/g' "$$f"; \
+            done; \
+            echo "Replaced 'Craft CMS Dev Environment' with '$(LABEL)'."; \
+        fi \
+    fi
+
 
 #----------------------------------------
 #-- Build commands --

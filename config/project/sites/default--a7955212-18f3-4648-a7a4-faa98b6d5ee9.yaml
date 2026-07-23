@@ -3,7 +3,7 @@ enabled: true
 handle: default
 hasUrls: true
 language: en-US
-name: 'Craft 5'
+name: $SITE_NAME
 primary: true
 siteGroup: a208ae0b-37d4-4720-9041-e8bc1acad32d # Craft 5
 sortOrder: 1
