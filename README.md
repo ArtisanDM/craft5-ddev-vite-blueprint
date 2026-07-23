@@ -1,6 +1,6 @@
 # Craft CMS Dev Environment
 
-Combine the power of Craft CMS and Vite.js with zero configuration setup and incredible fast paced development 😎.
+Combine the power of Craft CMS and Vite.js with zero configuration setup and incredible fast paced development.
 
 ## Quickstart
 
@@ -13,14 +13,14 @@ Combine the power of Craft CMS and Vite.js with zero configuration setup and inc
 ### Starting Up a New Project
 
 1. Create new repo from this template.
-2. Choose a project slug (must be kebab case). Run `make name SLUG=project-slug` replacing "project-slug" with your chosen value to rename the project.
+2. Choose a project slug (must be kebab case) and Site Name. Run `make name SLUG=project-slug LABEL="Site Name"` replacing "project-slug" and "Site Name" with your chosen value to rename the project.
 3. `make install`, follow prompts to set up Craft CMS.
     - _No starter DB is needed when starting the project from scratch._
     - _If none exists, a `.env` will be created at this point from the `.env.example`._
 4. If the site will be hosted on [Servd](https://servd.host/), you can run `make servd` at this point to add the [Servd Assets and Helpers](https://plugins.craftcms.com/servd-asset-storage) plugin and add the needed empty values to the `.env.example` and `.env` files.
 5. `make dev`
 6. open `https://test-project-name.ddev.site`
-7. Update `README.md` to remove blueprint instructions and customize any setup details for new project.
+7. Update `README.md` to remove "Starting Up a New Project Section" and customize any setup details for new project, such as relevant plugin instructions, additional framework details, and a project description.
 
 ### Subsequent Use
 
@@ -44,15 +44,24 @@ Notes can be added to the project using a `notes.md` file. This file will be aut
 
 ### Make Commands
 
-1. `make build` - build project files
-2. `make dev` - run vite project server
-3. `make install` - run first time setup
-4. `make env` - creates an env from env.example. Auto-runs during setup.
-5. `make env-check` - checks existing env file against env.example file to check for missing values that may have been added to the default example. This will run any time `make dev` is run to alert the user of missing values, but it can also be run independently.
-6. `make env-example` - If new values have been added to the local env, running this will copy them to the example for documentation, stripping sensitive keys and passwords.
-7. `make servd` - adds Servd elements to project.
-8. `make vue` - adds basic Vue elements to project. _Caution: This will overwrite the current vite.config.js with the contents of vite.config.vue.js. As such, running this command at any time other than project creation could be destructive to updates made to the Vite config. If updates to vite.config.js are present, changes from it should be manually added to vite.config.vue.js prior to running this command._
-9. `make fresh` - _Danger Zone:_ This command will wipe `vendor` and `node_modules`, delete the currently loaded database, and restart the ddev project from scratch. No code changes will be made, but the existing db will be lost _permanently_. A backup should be taken before running.
+## Commands
+
+- **help** — Lists all available make commands. Provides the same information as this list.
+- **name** — Replaces default project slug and label with relevant ones. Only run when spinning up a new project from the original scaffold. Will do nothing after the first run.
+- **build** — Builds CSS and JS files. Runs `make up` as a preliminary safety.
+- **dev** — Launches website in a browser and starts Vite dev server. Runs `make up` as a preliminary safety.
+- **fresh** — Stops current DDEV containers, destroys current database along with vendor and `node_modules` folders. Restarts DDEV containers and runs `make up` to prepare project.  
+  > **⚠️ Caution:** *Database delete cannot be undone.*
+- **install** — Runs Craft CMS Installation.
+- **up** — Starts DDEV if it is not already running, runs installation for Composer and Yarn.
+- **env** — If no `.env` file exists, creates one from the `.env.example` file.
+- **env-check** — Verifies `.env` has all required keys by comparing keys in `.env` with the ones in `.env.example`.
+- **env-example** — Updates `.env.example` to add any newly added keys from `.env`.
+- **servd** — Adds Servd support to this project.
+- **vue** — Adds Vue.js support to this project.  
+  > **⚠️ Caution:** *This will overwrite the current `vite.config.js` with the contents of `vite.config.vue.js`. Running this command at any time other than project creation could be destructive to updates made to the Vite config. If updates to `vite.config.js` are present, changes from it should be manually added to `vite.config.vue.js` prior to running this command.*
+
+
 
 ### DDEV Commands
 
@@ -68,13 +77,6 @@ Notes can be added to the project using a `notes.md` file. This file will be aut
 
 ## Credits
 
-Repo based on fork of [Craft CMS Dev Environment](https://github.com/thomasbendl/craft4-ddev-vite-blueprint)
+Repo based on fork of [this Craft/DDEV/Vite blueprint](https://github.com/thomasbendl/craft4-ddev-vite-blueprint).
 
-Updated by [Josh Parylak](https://github.com/joshparylak) - [Artisan Digital Media](https://github.com/ArtisanDM)
-
-### Original Credits
-
-The team behind the magic ✨ 🪄 🦄
-
--   <https://github.com/thomasbendl>
--   <https://github.com/smonist>
+Updated by [Josh Parylak](https://github.com/joshparylak) - [Artisan Digital Media](https://github.com/ArtisanDM).
