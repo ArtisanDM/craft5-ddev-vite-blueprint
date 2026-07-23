@@ -20,7 +20,7 @@ Combine the power of Craft CMS and Vite.js with zero configuration setup and inc
 3. `make install`, follow prompts to set up Craft CMS.
     - _No starter DB is needed when starting the project from scratch._
     - _If none exists, a `.env` will be created at this point from the `.env.example`, so it's important to have updated that file before running this step._
-4. If the site will be hosted on [Servd](https://servd.host/), you can run `make servd` at this point to add the (Servd Assets and Helpers)[https://plugins.craftcms.com/servd-asset-storage] plugin and add the needed empty values to the `.env.example` and `.env` files.
+4. If the site will be hosted on [Servd](https://servd.host/), you can run `make servd` at this point to add the [Servd Assets and Helpers](https://plugins.craftcms.com/servd-asset-storage) plugin and add the needed empty values to the `.env.example` and `.env` files.
 5. `make dev`
 6. open `https://[project-slug].ddev.site`
 7. Update `README.md` to remove blueprint instructions and customize any setup details for new project.
