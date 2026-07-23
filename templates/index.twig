@@ -2,10 +2,10 @@
 
 {% block content %}
 	<div class="container">
-		<div class="welcome" style="background-color: #0D1117; color: white; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 2em;">
+		<div class="welcome" style="background-color: var(--bg); color: white; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 2em;">
 			<p style="text-align: center; margin: 0;">Ready for Dev</p>
 			<h1 style="text-align: center; margin: 0;">{{ siteName }}</h1>
-			<a href="/{{ craft.app.config.general.cpTrigger }}" style="background-color: #94713a; color: white; padding: .65rem 2rem; text-decoration: none; border-radius: 12px; font-size: 1.35rem; margin-top:2rem;">View Control Panel</a>
+			<a href="/{{ craft.app.config.general.cpTrigger }}" style="background-color: var(--primary-color); color: white; padding: .65rem 2rem; text-decoration: none; border-radius: 12px; font-size: 1.35rem; margin-top:2rem;">View Control Panel</a>
 		</div>
 	</div>
 {% endblock %}
