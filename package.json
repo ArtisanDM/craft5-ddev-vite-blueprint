@@ -29,7 +29,7 @@
 		"prettier": "2.5.0",
 		"prettier-plugin-twig-melody": "^0.4.6",
 		"sass": "^1.43.4",
-		"vite": "^5.0.0",
+		"vite": "^8.0.0",
 		"vite-plugin-compression": "^0.3.6",
 		"vite-plugin-live-reload": "^2.1.0"
 	},

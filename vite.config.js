@@ -12,13 +12,18 @@ export default defineConfig(({ command }) => {
 		build: {
 			manifest: true,
 			outDir: './web/dist/',
-			rollupOptions: {
+			target: ['es2020', 'safari14'],
+
+			rolldownOptions: {
 				input: {
-					app: './src/js/app.ts',
-					css: './src/scss/main.scss',
+					app: 'src/js/app.ts',
+					css: 'src/scss/main.scss',
+				},
+				output: {
+					entryFileNames: '[name].js',
+					assetFileNames: '[name].[ext]',
 				},
 			},
-			target: ['es2020', 'safari14'],
 		},
 		server: {
 			host: '0.0.0.0',

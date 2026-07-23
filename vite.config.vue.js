@@ -6,21 +6,24 @@ import { defineConfig } from 'vite';
 
 const liveReload = liveReloadPkg.default ?? liveReloadPkg;
 
-export default defineConfig(async ({ command }) => {
-	const { default: critical } = await import('rollup-plugin-critical');
+export default defineConfig(({ command }) => {
 	return {
 		base: command === 'serve' ? '' : '/dist/',
 		css: { preprocessorOptions: { scss: { charset: false } } },
 		build: {
 			manifest: true,
 			outDir: './web/dist/',
-			rollupOptions: {
+			target: ['es2020', 'safari14'],
+			rolldownOptions: {
 				input: {
-					app: './src/js/app.ts',
-					css: './src/scss/main.scss',
+					app: 'src/js/app.ts',
+					css: 'src/scss/main.scss',
+				},
+				output: {
+					entryFileNames: '[name].js',
+					assetFileNames: '[name].[ext]',
 				},
 			},
-			target: ['es2020', 'safari14'],
 		},
 		server: {
 			host: '0.0.0.0',
@@ -46,12 +49,6 @@ export default defineConfig(async ({ command }) => {
 				},
 			}),
 			liveReload(['./templates/**/*']),
-			critical({
-				criticalUrl: 'http://localhost',
-				criticalBase: './web/dist/criticalcss/',
-				criticalPages: [{ uri: '/', template: 'index' }],
-				criticalConfig: {},
-			}),
 			viteCompression(),
 			svgLoader({
 				svgoConfig: {
