@@ -21,10 +21,6 @@ plugins:
     enabled: true
     licenseKey: WIDIKODINXIKHJGSTJO7SA78
     schemaVersion: 3.0.13
-  servd-asset-storage:
-    edition: standard
-    enabled: true
-    schemaVersion: 3.0.0
   vite:
     edition: standard
     enabled: true

@@ -5,8 +5,7 @@ import { defineConfig } from 'vite';
 const liveReload = liveReloadPkg.default ?? liveReloadPkg;
 
 let port = 3000;
-export default defineConfig(async ({ command }) => {
-	const { default: critical } = await import('rollup-plugin-critical');
+export default defineConfig(({ command }) => {
 	return {
 		base: command === 'serve' ? '' : '/dist/',
 		css: { preprocessorOptions: { scss: { charset: false } } },
@@ -33,12 +32,6 @@ export default defineConfig(async ({ command }) => {
 		},
 		plugins: [
 			liveReload(['./templates/**/*']),
-			critical({
-				criticalUrl: 'http://localhost',
-				criticalBase: './web/dist/criticalcss/',
-				criticalPages: [{ uri: '/', template: 'index' }],
-				criticalConfig: {},
-			}),
 			viteCompression(),
 		],
 	};
