@@ -20,7 +20,7 @@ Combine the power of Craft CMS and Vite.js with zero configuration setup and inc
 4. If the site will be hosted on [Servd](https://servd.host/), you can run `make servd` at this point to add the [Servd Assets and Helpers](https://plugins.craftcms.com/servd-asset-storage) plugin and add the needed empty values to the `.env.example` and `.env` files.
 5. `make dev`
 6. open `https://craft5-ddev-vite-blueprint.ddev.site`
-7. Update `README.md` to remove "Starting Up a New Project Section" and customize any setup details for new project, such as relevant plugin instructions, additional framework details, and a project description.
+7. Update `README.md` to remove "Starting Up a New Project" Section and customize any setup details for new project, such as relevant plugin instructions, additional framework details, and a project description.
 
 ### Subsequent Use
 
