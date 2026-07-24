@@ -44,8 +44,6 @@ Notes can be added to the project using a `notes.md` file. This file will be aut
 
 ### Make Commands
 
-## Commands
-
 - **help** — Lists all available make commands. Provides the same information as this list.
 - **name** — Replaces default project slug and label with relevant ones. Only run when spinning up a new project from the original scaffold. Will do nothing after the first run.
 - **build** — Builds CSS and JS files. Runs `make up` as a preliminary safety.
