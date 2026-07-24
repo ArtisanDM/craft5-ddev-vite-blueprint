@@ -72,7 +72,6 @@ up: env env-check
 		ddev start; \
 	fi
 	ddev composer install
-	ddev composer post-pull-dev
 	ddev exec yarn install
 	
 #----------------------------------------
@@ -120,38 +119,38 @@ help:
 	@printf "\033[1m\033[4mAll Available Make Commands:\033[0m"
 	@printf "\n \n"
 	
-	@./scripts/help.sh "name" \
+	@bash ./scripts/help.sh "name" \
 	"Replaces default project slug and label with relevant ones. Only run when spinning up a new project from the original scaffold. Will do nothing after the first run."
 
-	@./scripts/help.sh "build" \
+	@bash ./scripts/help.sh "build" \
 	"Builds CSS and JS files. Runs make up as a preliminary safety."
 
-	@./scripts/help.sh "dev" \
+	@bash ./scripts/help.sh "dev" \
 	"Launches website in a browser and starts Vite dev server. Runs make up as a preliminary safety."
 
-	@./scripts/help.sh "fresh" \
+	@bash ./scripts/help.sh "fresh" \
 	"Stops current DDEV containers, destroys current database along with vendor and node_modules folders. Restarts DDEV containers and runs make up to prepare project." \
 	"Database delete cannot be undone."
 
-	@./scripts/help.sh "install" \
+	@bash ./scripts/help.sh "install" \
 	"Runs Craft CMS Installation."
 
-	@./scripts/help.sh "up" \
+	@bash ./scripts/help.sh "up" \
 	"Starts DDEV if it is not already running, runs installation for Composer and Yarn."
 
-	@./scripts/help.sh "env" \
+	@bash ./scripts/help.sh "env" \
 	"If no .env file exists, creates one from the .env.example file."
 
-	@./scripts/help.sh "env-check" \
+	@bash ./scripts/help.sh "env-check" \
 	"Verifies .env has all required keys by comparing keys in .env with the ones in .env.example."
 
-	@./scripts/help.sh "env-example" \
+	@bash ./scripts/help.sh "env-example" \
 	"Updates .env.example to add any newly added keys from the .env."
 
-	@./scripts/help.sh "servd" \
+	@bash ./scripts/help.sh "servd" \
 	"Adds Servd support to this project."
 
-	@./scripts/help.sh "vue" \
+	@bash ./scripts/help.sh "vue" \
 	"Adds Vue.js support to this project." \
 	"This will overwrite vite.config.js with vite.config.vue.js. Running this command at any time other than project creation could be destructive to updates made to the Vite config. If updates to vite.config.js are present, changes from it should be manually added to vite.config.vue.js prior to running this command."
 

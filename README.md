@@ -8,7 +8,7 @@ Combine the power of Craft CMS and Vite.js with zero configuration setup and inc
 2. `make dev`
 3. open `https://[project-slug].ddev.site`
 
-## Advanced Setup
+## Start Up
 
 ### Starting Up a New Project
 
@@ -22,21 +22,21 @@ Combine the power of Craft CMS and Vite.js with zero configuration setup and inc
 6. open `https://craft5-ddev-vite-blueprint.ddev.site`
 7. Update `README.md` to remove "Starting Up a New Project" Section and customize any setup details for new project, such as relevant plugin instructions, additional framework details, and a project description.
 
-### Subsequent Use
+## Use
 
-#### Pulling existing project repo
+### Pulling existing project repo
 
 1. `ddev start`
 2. `ddev import-db --src=[file_path]` - import new DB, file path from project root. _(A gitignored `db` folder is included in the repository for storing local db copies)._
 3. `make dev`
 4. open `https://craft5-ddev-vite-blueprint.ddev.site`
 
-#### Restarting project for local dev
+### Restarting project for local dev
 
 1. `make dev`
 2. open `https://craft5-ddev-vite-blueprint.ddev.site`
 
-#### Notes
+### Notes
 
 Notes can be added to the project using a `notes.md` file. This file will be automatically ignored from the repo and is for personal developer use only. Project-critical information should be added to the `README.md`.
 
@@ -44,22 +44,20 @@ Notes can be added to the project using a `notes.md` file. This file will be aut
 
 ### Make Commands
 
-- **help** — Lists all available make commands. Provides the same information as this list.
-- **name** — Replaces default project slug and label with relevant ones. Only run when spinning up a new project from the original scaffold. Will do nothing after the first run.
-- **build** — Builds CSS and JS files. Runs `make up` as a preliminary safety.
-- **dev** — Launches website in a browser and starts Vite dev server. Runs `make up` as a preliminary safety.
-- **fresh** — Stops current DDEV containers, destroys current database along with vendor and `node_modules` folders. Restarts DDEV containers and runs `make up` to prepare project.  
-  > **⚠️ Caution:** *Database delete cannot be undone.*
-- **install** — Runs Craft CMS Installation.
-- **up** — Starts DDEV if it is not already running, runs installation for Composer and Yarn.
-- **env** — If no `.env` file exists, creates one from the `.env.example` file.
-- **env-check** — Verifies `.env` has all required keys by comparing keys in `.env` with the ones in `.env.example`.
-- **env-example** — Updates `.env.example` to add any newly added keys from `.env`.
-- **servd** — Adds Servd support to this project.
-- **vue** — Adds Vue.js support to this project.  
-  > **⚠️ Caution:** *This will overwrite the current `vite.config.js` with the contents of `vite.config.vue.js`. Running this command at any time other than project creation could be destructive to updates made to the Vite config. If updates to `vite.config.js` are present, changes from it should be manually added to `vite.config.vue.js` prior to running this command.*
-
-
+-   **help** — Lists all available make commands. Provides the same information as this list.
+-   **name** — Replaces default project slug and label with relevant ones. Only run when spinning up a new project from the original scaffold. Will do nothing after the first run.
+-   **build** — Builds CSS and JS files. Runs `make up` as a preliminary safety.
+-   **dev** — Launches website in a browser and starts Vite dev server. Runs `make up` as a preliminary safety.
+-   **fresh** — Stops current DDEV containers, destroys current ddev database instance, deleting the loaded database, along with vendor and `node_modules` folders. Restarts DDEV containers and runs `make up` to prepare project.
+    > **⚠️ Caution:** _Database delete cannot be undone._
+-   **install** — Runs Craft CMS Installation.
+-   **up** — Starts DDEV if it is not already running, runs installation for Composer and Yarn.
+-   **env** — If no `.env` file exists, creates one from the `.env.example` file.
+-   **env-check** — Verifies `.env` has all required keys by comparing keys in `.env` with the ones in `.env.example`.
+-   **env-example** — Updates `.env.example` to add any newly added keys from `.env`.
+-   **servd** — Adds Servd support to this project.
+-   **vue** — Adds Vue.js support to this project.
+    > **⚠️ Caution:** _This will overwrite the current `vite.config.js` with the contents of `vite.config.vue.js`. Running this command at any time other than project creation could be destructive to updates made to the Vite config. If updates to `vite.config.js` are present, changes from it should be manually added to `vite.config.vue.js` prior to running this command._
 
 ### DDEV Commands
 
